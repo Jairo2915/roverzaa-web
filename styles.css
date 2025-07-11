@@ -3,47 +3,52 @@
   --color-secundario: #0066cc;
   --color-acento: #ff8c00;
   --texto-claro: #ffffff;
-  --fondo-claro: rgba(0, 0, 0, 0.5);
+  --fondo-claro: #f4f7fb;
   --fondo-seccion: #ffffff;
   --radio-esquinas: 12px;
-  --sombra: rgba(0, 0, 0, 0.2);
+  --sombra: rgba(0, 0, 0, 0.1);
 }
 
-/* FONDO DE PANTALLA */
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-image: url("https://images.unsplash.com/photo-1604147706284-ef86f2291a3f");
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--fondo-claro);
+  color: #333;
   line-height: 1.6;
   scroll-behavior: smooth;
 }
 
-/* ENCABEZADO */
+/* HEADER */
 header {
   background: var(--color-principal);
   color: var(--texto-claro);
-  padding: 40px 20px;
+  padding: 30px 20px;
   text-align: center;
-  border-radius: var(--radio-esquinas);
+  position: relative;
+}
+.logo {
+  width: 100px;
+  height: auto;
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }
 header h1 {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   margin-bottom: 10px;
 }
 header p {
   font-size: 1.2rem;
   opacity: 0.9;
 }
-.logo {
-  width: 120px;
-  height: auto;
-  margin-bottom: 15px;
-}
 
-/* NAVEGACIÓN */
+/* NAV */
 nav {
   position: sticky;
   top: 0;
@@ -51,6 +56,9 @@ nav {
   padding: 10px 20px;
   box-shadow: 0 2px 5px var(--sombra);
   z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 nav a {
   color: var(--texto-claro);
@@ -63,9 +71,10 @@ nav a {
 }
 nav a:hover {
   background: var(--color-acento);
+  color: var(--texto-claro);
 }
 
-/* SECCIONES */
+/* SECTION */
 section {
   max-width: 1000px;
   margin: 40px auto;
@@ -73,10 +82,10 @@ section {
   background: var(--fondo-seccion);
   border-radius: var(--radio-esquinas);
   box-shadow: 0 4px 10px var(--sombra);
-  color: #333;
+  transition: transform 0.3s;
 }
 section:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px);
 }
 h2 {
   color: var(--color-principal);
@@ -85,14 +94,9 @@ h2 {
   display: inline-block;
   padding-bottom: 5px;
 }
-
-/* SUBSECCIONES */
-.subseccion {
-  margin-bottom: 20px;
-}
-.subseccion h3 {
+h3 {
   color: var(--color-secundario);
-  margin-bottom: 8px;
+  margin-top: 20px;
 }
 
 /* LISTAS */
@@ -111,6 +115,15 @@ ul li:hover {
   color: var(--texto-claro);
 }
 
+/* VISIÓN Y MISIÓN */
+#vision-mision ul {
+  list-style: disc inside;
+  padding-left: 20px;
+}
+#vision-mision ul li {
+  margin-bottom: 10px;
+}
+
 /* CONTACTO */
 #contacto p {
   margin: 10px 0;
@@ -123,19 +136,30 @@ ul li:hover {
   text-decoration: underline;
 }
 
-/* PIE DE PÁGINA */
+/* FOOTER */
 footer {
   background: var(--color-secundario);
   color: var(--texto-claro);
   padding: 20px;
   text-align: center;
   font-size: 0.9rem;
-  border-radius: 0 0 var(--radio-esquinas) var(--radio-esquinas);
 }
 
-/* RESPONSIVO */
+/* RESPONSIVE */
 @media (max-width: 600px) {
-  header h1 { font-size: 2rem; }
-  nav a { display: block; margin: 8px 0; }
-  section { margin: 20px 10px; padding: 20px 10px; }
+  header h1 {
+    font-size: 1.8rem;
+  }
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav a {
+    margin: 8px 0;
+  }
+  .logo {
+    position: static;
+    display: block;
+    margin: 0 auto 20px;
+  }
 }
