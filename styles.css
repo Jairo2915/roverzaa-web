@@ -3,32 +3,31 @@
   --color-secundario: #0066cc;
   --color-acento: #ff8c00;
   --texto-claro: #ffffff;
-  --fondo-claro: #f5f5f5;
+  --fondo-claro: rgba(0, 0, 0, 0.5);
   --fondo-seccion: #ffffff;
   --radio-esquinas: 12px;
-  --sombra: rgba(0, 0, 0, 0.1);
+  --sombra: rgba(0, 0, 0, 0.2);
 }
 
-/* RESET BÁSICO */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* FONDO DE PANTALLA */
 body {
   font-family: Arial, sans-serif;
-  background-color: var(--fondo-claro);
-  color: #333;
+  background-image: url("https://images.unsplash.com/photo-1604147706284-ef86f2291a3f");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: #ffffff;
   line-height: 1.6;
   scroll-behavior: smooth;
 }
 
-/* HEADER */
+/* ENCABEZADO */
 header {
   background: var(--color-principal);
   color: var(--texto-claro);
   padding: 40px 20px;
   text-align: center;
+  border-radius: var(--radio-esquinas);
 }
 header h1 {
   font-size: 2.8rem;
@@ -38,8 +37,13 @@ header p {
   font-size: 1.2rem;
   opacity: 0.9;
 }
+.logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 15px;
+}
 
-/* NAVEGACIÓN FIJA */
+/* NAVEGACIÓN */
 nav {
   position: sticky;
   top: 0;
@@ -59,10 +63,9 @@ nav a {
 }
 nav a:hover {
   background: var(--color-acento);
-  color: var(--texto-claro);
 }
 
-/* SECCIONES GENERALES */
+/* SECCIONES */
 section {
   max-width: 1000px;
   margin: 40px auto;
@@ -70,10 +73,10 @@ section {
   background: var(--fondo-seccion);
   border-radius: var(--radio-esquinas);
   box-shadow: 0 4px 10px var(--sombra);
-  transition: transform 0.3s;
+  color: #333;
 }
 section:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
 }
 h2 {
   color: var(--color-principal);
@@ -83,7 +86,16 @@ h2 {
   padding-bottom: 5px;
 }
 
-/* LISTAS Y PROYECTOS */
+/* SUBSECCIONES */
+.subseccion {
+  margin-bottom: 20px;
+}
+.subseccion h3 {
+  color: var(--color-secundario);
+  margin-bottom: 8px;
+}
+
+/* LISTAS */
 ul {
   list-style: none;
   padding-left: 0;
@@ -99,35 +111,6 @@ ul li:hover {
   color: var(--texto-claro);
 }
 
-/* SECCIÓN VISIÓN-MISIÓN */
-#vision-mision {
-  background: var(--fondo-seccion);
-  border-radius: var(--radio-esquinas);
-  box-shadow: 0 4px 10px var(--sombra);
-  margin: 40px auto;
-  padding: 30px 20px;
-  max-width: 1000px;
-}
-#vision-mision h2 {
-  color: var(--color-principal);
-  text-align: center;
-  margin-bottom: 20px;
-}
-#vision-mision .subseccion {
-  margin-bottom: 20px;
-}
-#vision-mision h3 {
-  color: var(--color-secundario);
-  margin-bottom: 8px;
-}
-#vision-mision ul {
-  list-style: disc inside;
-  padding-left: 20px;
-}
-#vision-mision ul li {
-  margin-bottom: 10px;
-}
-
 /* CONTACTO */
 #contacto p {
   margin: 10px 0;
@@ -140,16 +123,17 @@ ul li:hover {
   text-decoration: underline;
 }
 
-/* FOOTER */
+/* PIE DE PÁGINA */
 footer {
   background: var(--color-secundario);
   color: var(--texto-claro);
   padding: 20px;
   text-align: center;
   font-size: 0.9rem;
+  border-radius: 0 0 var(--radio-esquinas) var(--radio-esquinas);
 }
 
-/* MEDIA QUERY para móvil */
+/* RESPONSIVO */
 @media (max-width: 600px) {
   header h1 { font-size: 2rem; }
   nav a { display: block; margin: 8px 0; }
