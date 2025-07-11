@@ -9,45 +9,37 @@
   --sombra: rgba(0, 0, 0, 0.1);
 }
 
-/* Reset básico */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: Arial, sans-serif;
   background-color: var(--fondo-claro);
   color: #333;
   line-height: 1.6;
-  scroll-behavior: smooth;
 }
 
-/* Header con logo de esquina a esquina */
+/* Header limpio con logo ancho */
 header {
-  position: relative;
-}
-.logo-container {
-  position: relative;
-  width: 100%;
+  background-color: var(--color-principal);
+  padding: 20px;
+  text-align: center;
 }
 .logo {
   width: 100%;
+  max-width: 1000px;
   height: auto;
   display: block;
+  margin: 0 auto;
 }
 .eslogan {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 64, 128, 0.6);
   color: var(--texto-claro);
-  padding: 12px 20px;
-  border-radius: var(--radio-esquinas);
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 10px;
 }
 
 /* Navegación */
@@ -70,23 +62,12 @@ nav a {
 }
 nav a:hover {
   background: var(--color-acento);
-  color: var(--texto-claro);
-}
-
-/* Footer */
-footer {
-  background: var(--color-secundario);
-  color: var(--texto-claro);
-  padding: 20px;
-  text-align: center;
-  font-size: 0.9rem;
 }
 
 /* Responsive */
 @media (max-width: 600px) {
   .eslogan {
     font-size: 1.2rem;
-    padding: 8px 14px;
   }
   nav a {
     display: block;
