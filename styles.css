@@ -51,7 +51,6 @@ header {
   font-weight: bold;
   color: var(--color-principal);
 }
-
 nav {
   position: sticky;
   top: 0;
