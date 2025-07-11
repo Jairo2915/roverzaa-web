@@ -1,7 +1,7 @@
 :root {
-  --color-principal: #004080;      /* azul oscuro */
-  --color-secundario: #0066cc;     /* azul medio */
-  --color-acento: #ff8c00;         /* naranja */
+  --color-principal: #004080;
+  --color-secundario: #0066cc;
+  --color-acento: #ff8c00;
   --texto-claro: #ffffff;
   --fondo-claro: #f5f5f5;
   --fondo-seccion: #ffffff;
@@ -9,7 +9,6 @@
   --sombra: rgba(0, 0, 0, 0.1);
 }
 
-/* RESET BÁSICO */
 * {
   margin: 0;
   padding: 0;
@@ -25,22 +24,37 @@ body {
 
 /* HEADER */
 header {
-  position: relative;
-  height: 300px;
-  background-image: url('logo-roverzaa.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-  background-color: transparent;
+  background: #fff;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-bottom: 20px;
-  color: var(--texto-claro);
-  text-shadow: 0 0 8px rgba(0,0,0,0.8);
-  font-size: 1.8rem;
-  font-weight: bold;
+  justify-content: center;
+  padding: 30px 0 10px;
+  position: relative;
+}
+
+.logo-container {
+  position: relative;
+  width: 300px;
+  max-width: 90vw;
+}
+
+.logo {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--sombra);
+}
+
+.eslogan {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
   text-align: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--texto-claro);
+  background-color: rgba(0, 64, 128, 0.7); /* azul oscuro semitransparente */
+  padding: 8px 0;
+  border-radius: 0 0 12px 12px;
 }
 
 /* NAVEGACIÓN FIJA */
@@ -51,6 +65,7 @@ nav {
   padding: 10px 20px;
   box-shadow: 0 2px 5px var(--sombra);
   z-index: 100;
+  text-align: center;
 }
 nav a {
   color: var(--texto-claro);
@@ -126,9 +141,12 @@ footer {
 
 /* MEDIA QUERY para móvil */
 @media (max-width: 600px) {
-  header {
-    height: 200px;
-    font-size: 1.3rem;
+  .logo-container {
+    width: 90vw;
+  }
+  .eslogan {
+    font-size: 1.1rem;
+    padding: 6px 0;
   }
   nav a {
     display: block;
@@ -138,33 +156,4 @@ footer {
     margin: 20px 10px;
     padding: 20px 10px;
   }
-}
-
-/* Visión, Misión y Objetivos */
-#vision-mision {
-  background: var(--fondo-seccion);
-  border-radius: var(--radio-esquinas);
-  box-shadow: 0 4px 10px var(--sombra);
-  margin: 40px auto;
-  padding: 30px 20px;
-  max-width: 1000px;
-}
-#vision-mision h2 {
-  color: var(--color-principal);
-  text-align: center;
-  margin-bottom: 20px;
-}
-#vision-mision .subseccion {
-  margin-bottom: 20px;
-}
-#vision-mision h3 {
-  color: var(--color-secundario);
-  margin-bottom: 8px;
-}
-#vision-mision ul {
-  list-style: disc inside;
-  padding-left: 20px;
-}
-#vision-mision ul li {
-  margin-bottom: 10px;
 }
