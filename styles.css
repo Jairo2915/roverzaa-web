@@ -15,7 +15,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: Arial, sans-serif;
   background-color: var(--fondo-claro);
@@ -39,21 +38,20 @@ header::before {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 300px;
+  width: 300px; /* tamaño del logo */
   height: 300px;
-  background-image: url('logo-roverzaa.png');
-  background-repeat: no-repeat;
-  background-position: center;
+  background: url('logo-roverzaa.png') no-repeat center center;
   background-size: contain;
-  opacity: 0.1;
+  opacity: 0.15; /* transparencia */
   transform: translate(-50%, -50%);
-  pointer-events: none;
+  pointer-events: none; /* para que no interfiera al hacer clic */
   z-index: 0;
 }
 
 header h1, header p {
   position: relative;
   z-index: 1;
+  margin-bottom: 10px;
 }
 
 /* NAVEGACIÓN FIJA */
@@ -64,8 +62,8 @@ nav {
   padding: 10px 20px;
   box-shadow: 0 2px 5px var(--sombra);
   z-index: 100;
+  text-align: center;
 }
-
 nav a {
   color: var(--texto-claro);
   margin: 0 15px;
@@ -75,7 +73,6 @@ nav a {
   border-radius: var(--radio-esquinas);
   transition: background 0.3s, color 0.3s;
 }
-
 nav a:hover {
   background: var(--color-acento);
   color: var(--texto-claro);
@@ -91,11 +88,9 @@ section {
   box-shadow: 0 4px 10px var(--sombra);
   transition: transform 0.3s;
 }
-
 section:hover {
   transform: translateY(-5px);
 }
-
 h2 {
   color: var(--color-principal);
   margin-bottom: 15px;
@@ -109,14 +104,12 @@ ul {
   list-style: none;
   padding-left: 0;
 }
-
 ul li {
   margin: 12px 0;
   padding: 10px;
   border-radius: var(--radio-esquinas);
   transition: background 0.3s, color 0.3s;
 }
-
 ul li:hover {
   background: var(--color-principal);
   color: var(--texto-claro);
@@ -126,12 +119,10 @@ ul li:hover {
 #contacto p {
   margin: 10px 0;
 }
-
 #contacto a {
   color: var(--color-principal);
   text-decoration: none;
 }
-
 #contacto a:hover {
   text-decoration: underline;
 }
@@ -152,7 +143,7 @@ footer {
   section { margin: 20px 10px; padding: 20px 10px; }
 }
 
-/* Sección Visión, Misión y Objetivos */
+/* SECCIÓN Visión, Misión y Objetivos */
 #vision-mision {
   background: var(--fondo-seccion);
   border-radius: var(--radio-esquinas);
