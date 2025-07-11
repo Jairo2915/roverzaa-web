@@ -26,32 +26,21 @@ body {
 /* HEADER */
 header {
   position: relative;
-  background: var(--color-principal);
-  color: var(--texto-claro);
-  padding: 80px 20px;
-  text-align: center;
-  overflow: hidden;
-}
-
-header::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300px; /* tamaño del logo */
   height: 300px;
-  background: url('logo-roverzaa.png') no-repeat center center;
+  background-image: url('logo-roverzaa.png');
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: contain;
-  opacity: 0.15; /* transparencia */
-  transform: translate(-50%, -50%);
-  pointer-events: none; /* para que no interfiera al hacer clic */
-  z-index: 0;
-}
-
-header h1, header p {
-  position: relative;
-  z-index: 1;
-  margin-bottom: 10px;
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 20px;
+  color: var(--texto-claro);
+  text-shadow: 0 0 8px rgba(0,0,0,0.8);
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 /* NAVEGACIÓN FIJA */
@@ -62,7 +51,6 @@ nav {
   padding: 10px 20px;
   box-shadow: 0 2px 5px var(--sombra);
   z-index: 100;
-  text-align: center;
 }
 nav a {
   color: var(--texto-claro);
@@ -138,12 +126,21 @@ footer {
 
 /* MEDIA QUERY para móvil */
 @media (max-width: 600px) {
-  header h1 { font-size: 2rem; }
-  nav a { display: block; margin: 8px 0; }
-  section { margin: 20px 10px; padding: 20px 10px; }
+  header {
+    height: 200px;
+    font-size: 1.3rem;
+  }
+  nav a {
+    display: block;
+    margin: 8px 0;
+  }
+  section {
+    margin: 20px 10px;
+    padding: 20px 10px;
+  }
 }
 
-/* SECCIÓN Visión, Misión y Objetivos */
+/* Visión, Misión y Objetivos */
 #vision-mision {
   background: var(--fondo-seccion);
   border-radius: var(--radio-esquinas);
@@ -152,27 +149,22 @@ footer {
   padding: 30px 20px;
   max-width: 1000px;
 }
-
 #vision-mision h2 {
   color: var(--color-principal);
   text-align: center;
   margin-bottom: 20px;
 }
-
 #vision-mision .subseccion {
   margin-bottom: 20px;
 }
-
 #vision-mision h3 {
   color: var(--color-secundario);
   margin-bottom: 8px;
 }
-
 #vision-mision ul {
   list-style: disc inside;
   padding-left: 20px;
 }
-
 #vision-mision ul li {
   margin-bottom: 10px;
 }
