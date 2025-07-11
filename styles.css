@@ -104,6 +104,12 @@ h2 {
   padding-bottom: 5px;
 }
 
+h3 {
+  color: var(--color-secundario);
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
 /* LISTAS Y PROYECTOS */
 ul {
   list-style: none;
@@ -120,6 +126,30 @@ ul li {
 ul li:hover {
   background: var(--color-principal);
   color: var(--texto-claro);
+}
+
+/* Galería de proyectos */
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.galeria img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: var(--radio-esquinas);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
 /* CONTACTO */
@@ -163,5 +193,10 @@ footer {
   section {
     margin: 20px 10px;
     padding: 20px 10px;
+  }
+
+  .galeria img {
+    width: 45vw;
+    height: auto;
   }
 }
