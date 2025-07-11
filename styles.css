@@ -31,10 +31,12 @@ header {
   position: relative;
 }
 
-.logo-container {
-  position: relative;
-  width: 300px;
-  max-width: 90vw;
+.eslogan {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--color-principal);
 }
 
 .logo {
