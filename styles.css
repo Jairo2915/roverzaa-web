@@ -1,7 +1,7 @@
 :root {
-  --color-principal: #004080;      /* azul oscuro */
-  --color-secundario: #0066cc;     /* azul medio */
-  --color-acento: #ff8c00;         /* naranja */
+  --color-principal: #004080;
+  --color-secundario: #0066cc;
+  --color-acento: #ff8c00;
   --texto-claro: #ffffff;
   --fondo-claro: #f5f5f5;
   --fondo-seccion: #ffffff;
@@ -99,6 +99,35 @@ ul li:hover {
   color: var(--texto-claro);
 }
 
+/* SECCIÓN VISIÓN-MISIÓN */
+#vision-mision {
+  background: var(--fondo-seccion);
+  border-radius: var(--radio-esquinas);
+  box-shadow: 0 4px 10px var(--sombra);
+  margin: 40px auto;
+  padding: 30px 20px;
+  max-width: 1000px;
+}
+#vision-mision h2 {
+  color: var(--color-principal);
+  text-align: center;
+  margin-bottom: 20px;
+}
+#vision-mision .subseccion {
+  margin-bottom: 20px;
+}
+#vision-mision h3 {
+  color: var(--color-secundario);
+  margin-bottom: 8px;
+}
+#vision-mision ul {
+  list-style: disc inside;
+  padding-left: 20px;
+}
+#vision-mision ul li {
+  margin-bottom: 10px;
+}
+
 /* CONTACTO */
 #contacto p {
   margin: 10px 0;
@@ -125,65 +154,4 @@ footer {
   header h1 { font-size: 2rem; }
   nav a { display: block; margin: 8px 0; }
   section { margin: 20px 10px; padding: 20px 10px; }
-}
-
-#vision-mision {
-  background: var(--fondo-seccion);
-  border-radius: var(--radio-esquinas);
-  box-shadow: 0 4px 10px var(--sombra);
-  margin: 40px auto;
-  padding: 30px 20px;
-  max-width: 1000px;
-}
-
-#vision-mision h2 {
-  color: var(--color-principal);
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-#vision-mision .subseccion {
-  margin-bottom: 20px;
-}
-
-#vision-mision h3 {
-  color: var(--color-secundario);
-  margin-bottom: 8px;
-}
-
-#vision-mision ul {
-  list-style: disc inside;
-  padding-left: 20px;
-}
-
-#vision-mision ul li {
-  margin-bottom: 10px;
-}
-Quedará así (ejemplo de las últimas líneas):
-
-css
-Copiar
-Editar
-/* ... tu CSS anterior ... */
-
-footer {
-  background: var(--color-secundario);
-  color: var(--texto-claro);
-  padding: 20px;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-@media (max-width: 600px) {
-  /* ... estilos responsivos ... */
-}
-
-/* Sección Visión, Misión y Objetivos */
-#vision-mision {
-  background: var(--fondo-seccion);
-  border-radius: var(--radio-esquinas);
-  box-shadow: 0 4px 10px var(--sombra);
-  margin: 40px auto;
-  padding: 30px 20px;
-  max-width: 1000px;
 }
