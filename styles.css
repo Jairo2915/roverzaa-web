@@ -1,15 +1,15 @@
 :root {
-  --color-principal: #004080;
-  --color-secundario: #0066cc;
-  --color-acento: #ff8c00;
+  --color-principal: #004080;      /* azul oscuro */
+  --color-secundario: #0066cc;     /* azul medio */
+  --color-acento: #ff8c00;         /* naranja */
   --texto-claro: #ffffff;
-  --fondo-claro: #f4f7fb;
+  --fondo-claro: #f5f5f5;
   --fondo-seccion: #ffffff;
   --radio-esquinas: 12px;
   --sombra: rgba(0, 0, 0, 0.1);
 }
 
-/* RESET */
+/* RESET BÁSICO */
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +17,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Arial, sans-serif;
   background-color: var(--fondo-claro);
   color: #333;
   line-height: 1.6;
@@ -26,29 +26,37 @@ body {
 
 /* HEADER */
 header {
+  position: relative;
   background: var(--color-principal);
   color: var(--texto-claro);
-  padding: 30px 20px;
+  padding: 80px 20px;
   text-align: center;
-  position: relative;
-}
-.logo {
-  width: 100px;
-  height: auto;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-header p {
-  font-size: 1.2rem;
-  opacity: 0.9;
+  overflow: hidden;
 }
 
-/* NAV */
+header::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  background-image: url('logo-roverzaa.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.1;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+header h1, header p {
+  position: relative;
+  z-index: 1;
+}
+
+/* NAVEGACIÓN FIJA */
 nav {
   position: sticky;
   top: 0;
@@ -56,10 +64,8 @@ nav {
   padding: 10px 20px;
   box-shadow: 0 2px 5px var(--sombra);
   z-index: 100;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }
+
 nav a {
   color: var(--texto-claro);
   margin: 0 15px;
@@ -69,12 +75,13 @@ nav a {
   border-radius: var(--radio-esquinas);
   transition: background 0.3s, color 0.3s;
 }
+
 nav a:hover {
   background: var(--color-acento);
   color: var(--texto-claro);
 }
 
-/* SECTION */
+/* SECCIONES GENERALES */
 section {
   max-width: 1000px;
   margin: 40px auto;
@@ -84,9 +91,11 @@ section {
   box-shadow: 0 4px 10px var(--sombra);
   transition: transform 0.3s;
 }
+
 section:hover {
   transform: translateY(-5px);
 }
+
 h2 {
   color: var(--color-principal);
   margin-bottom: 15px;
@@ -94,44 +103,35 @@ h2 {
   display: inline-block;
   padding-bottom: 5px;
 }
-h3 {
-  color: var(--color-secundario);
-  margin-top: 20px;
-}
 
-/* LISTAS */
+/* LISTAS Y PROYECTOS */
 ul {
   list-style: none;
   padding-left: 0;
 }
+
 ul li {
   margin: 12px 0;
   padding: 10px;
   border-radius: var(--radio-esquinas);
   transition: background 0.3s, color 0.3s;
 }
+
 ul li:hover {
   background: var(--color-principal);
   color: var(--texto-claro);
-}
-
-/* VISIÓN Y MISIÓN */
-#vision-mision ul {
-  list-style: disc inside;
-  padding-left: 20px;
-}
-#vision-mision ul li {
-  margin-bottom: 10px;
 }
 
 /* CONTACTO */
 #contacto p {
   margin: 10px 0;
 }
+
 #contacto a {
   color: var(--color-principal);
   text-decoration: none;
 }
+
 #contacto a:hover {
   text-decoration: underline;
 }
@@ -145,21 +145,43 @@ footer {
   font-size: 0.9rem;
 }
 
-/* RESPONSIVE */
+/* MEDIA QUERY para móvil */
 @media (max-width: 600px) {
-  header h1 {
-    font-size: 1.8rem;
-  }
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
-  nav a {
-    margin: 8px 0;
-  }
-  .logo {
-    position: static;
-    display: block;
-    margin: 0 auto 20px;
-  }
+  header h1 { font-size: 2rem; }
+  nav a { display: block; margin: 8px 0; }
+  section { margin: 20px 10px; padding: 20px 10px; }
+}
+
+/* Sección Visión, Misión y Objetivos */
+#vision-mision {
+  background: var(--fondo-seccion);
+  border-radius: var(--radio-esquinas);
+  box-shadow: 0 4px 10px var(--sombra);
+  margin: 40px auto;
+  padding: 30px 20px;
+  max-width: 1000px;
+}
+
+#vision-mision h2 {
+  color: var(--color-principal);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#vision-mision .subseccion {
+  margin-bottom: 20px;
+}
+
+#vision-mision h3 {
+  color: var(--color-secundario);
+  margin-bottom: 8px;
+}
+
+#vision-mision ul {
+  list-style: disc inside;
+  padding-left: 20px;
+}
+
+#vision-mision ul li {
+  margin-bottom: 10px;
 }
